@@ -34,7 +34,7 @@ function App() {
     price: 399,
   },];
 
-  function handleClick(product){
+  function handlePurches(product){
     alert(`You clicked item is ${product.title} is $${product.price}`)
   }
 
@@ -45,14 +45,14 @@ function App() {
                      height="96px" 
                      background="darkolivegreen" 
                      product={products[0]}
-                     onClick={handleClick}/>
+                     onPurches={handlePurches}/>
         <ProductCard width="64px" height="64px" product={products[1]}
-                      onClick={handleClick}/>
+                      onPurches={handlePurches}/>
         <ProductCard width="128px" 
                      height="128px" 
                      background="peru" 
                      product={products[2]}
-                     onClick={handleClick}/>
+                     onPurches={handlePurches}/>
       </ProductList>
     </div>
   );
