@@ -41,19 +41,19 @@ function App() {
   return (
     <div className="App">
       <ProductList>
-        <ProductCard width="96px" 
-                     height="96px" 
-                     background="darkolivegreen" 
-                     product={products[0]}
-                     onPurches={handlePurches}/>
-        <ProductCard width="64px" height="64px" product={products[1]}
-                      onPurches={handlePurches}/>
-        <ProductCard width="128px" 
-                     height="128px" 
-                     background="peru" 
-                     product={products[2]}
-                     onPurches={handlePurches}/>
+        {products.map(product => (
+          <ProductCard key={product.title} product={product} onPurches={handlePurches}/>
+        ))}
       </ProductList>
+
+      <h2>Product which cost up to $500</h2>
+      <ul>
+        {products.filter(({price})=> price < 500).map(({title, price})=> (
+         <li> 
+          {title} cost ${price}
+         </li>
+        ))}
+      </ul>
     </div>
   );
 }
